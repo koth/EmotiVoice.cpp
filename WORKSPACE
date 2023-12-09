@@ -40,3 +40,40 @@ http_archive(
             "https://github.com/JuliaStrings/utf8proc/archive/v2.4.0.tar.gz",
         ]
 )
+
+http_archive(
+        name = "cppjieba",
+        build_file = "@emotivoice_cpp//third_party:cppjieba.BUILD",
+        strip_prefix = "cppjieba-5.1.0",
+        patch_cmds=[
+            """cat >test/BUILD<<EOL
+package(default_visibility = ["//visibility:public"])
+cc_binary(
+    name="demo",
+    srcs=["demo.cpp"],
+    deps=[
+        '//:cppjieba',
+    ],
+    data=[
+        '//:cppjieba_dict',
+    ]
+)
+"""
+        ],
+        # sha256 = "",
+        urls = [
+            "https://github.com/yanyiwu/cppjieba/archive/v5.1.0.tar.gz",
+        ]
+)
+
+
+http_archive(
+        name = "limonp",
+        build_file = "@emotivoice_cpp//third_party:limonp.BUILD",
+        strip_prefix = "limonp-a269e34dc4948d5a9209e21a7887b52daa0d3e78",
+        # sha256 = "",
+        urls = [
+            "https://github.com/yanyiwu/limonp/archive/a269e34dc4948d5a9209e21a7887b52daa0d3e78.tar.gz",
+        ]
+)
+
