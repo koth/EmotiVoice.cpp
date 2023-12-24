@@ -21,6 +21,14 @@ http_archive(
 
 
 http_archive(
+        name = "gtest",
+        urls = ["https://github.com/google/googletest/archive/v1.14.0.tar.gz"],
+        strip_prefix = "googletest-1.14.0",
+)
+
+
+
+http_archive(
         name = "utfcpp",
         build_file = "@emotivoice_cpp//third_party:utfcpp.BUILD",
         strip_prefix = "utfcpp-3.1",
