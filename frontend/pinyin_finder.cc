@@ -32,7 +32,7 @@ bool PinyinFinder::init(const std::string& singleCharacterDictPath,
     }
     std::string str(line, strlen(line));
     std::smatch match;
-    CHECK(regex_match(str, match, pattern)) << "match error for line: " << str;
+    CHECK(std::regex_match(str, match, pattern)) << "match error for line: " << str;
     uint32_t unicode = stoul(match[1], nullptr, 16);
     
     std::string  pinyin = match[2];

@@ -42,3 +42,16 @@ cc_test(
         "@gtest//:gtest_main",
     ],
 )
+
+cc_library(
+    name = "g2p_cn",
+    srcs=[
+        "g2p_cn.cc",
+        "g2p_cn.h",
+    ],
+    deps=[
+        ":pinyin_finder",
+        "@cppjieba",
+        "@com_google_absl//absl/strings:strings",
+    ]
+)
