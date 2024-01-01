@@ -85,3 +85,12 @@ http_archive(
         ]
 )
 
+http_archive(
+        name = "ort_linux",
+        build_file = "@emotivoice_cpp//third_party:ort_linux.BUILD",
+        strip_prefix = "onnxruntime-linux-x64-1.14.1",
+        integrity = "sha256-AQWF9TTYIr8C1Ux8/FO1eqPrDPNPj7dQPuUZ7RjiXSk=",
+        urls = [
+            "https://github.com/microsoft/onnxruntime/releases/download/v1.14.1/onnxruntime-linux-x64-1.14.1.tgz",
+        ]
+)
